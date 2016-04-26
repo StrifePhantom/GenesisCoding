@@ -96,6 +96,10 @@ namespace GenesisCoding
         {
         }
 
+        //Zach adding two new properties
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
         public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
         {
             return user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager);

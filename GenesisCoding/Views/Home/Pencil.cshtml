@@ -1,0 +1,134 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    In this tutorial, you'll learn how to create a Pencil logo.
+</p>
+<div>
+    <h2>Step 1</h2>
+    <p>
+        Create a Rounded Rectangle with the Rounded Rectangle Tool (width / height=250px).
+        When drawing, hold down the Shift key to create a square.
+        If you want to change the roundness, press the Up or Down keys while pressing the Mouse Left Button.
+        Fill the object with a nice color (C=35 M=9 Y=70 K=0).
+    </p>
+
+    <img src="~/Images/pencil1.jpg" />
+</div>
+<h2>Step 2</h2>
+<p>
+    Create another Rounded Rectangle (width=50px / height=250px). Fill it with red.
+    No need to align it to the another rectangle, you can place it anywhere on the canvas.
+</p>
+<img src="~/Images/pencil2.jpg" />
+<h2>Step 3</h2>
+<p>
+    Create a Rectangle with the Rectangle Tool (M) set it’s width to 50px and height to 25px.
+    If you don’t set a size you can set it later (Step 11).
+    Place it over the red object.
+</p>
+<img src="~/Images/pencil3.jpg" />
+<h2>Step 4</h2>
+<p>
+    Create another Rectangle, this time make it square by pressing the Shift key while drawing.
+    The size doesn’t matter, we will set it later.
+    Rotate with 45º. Go to Object -> Transform -> Rotate and set the angle to 45 or simply grab one of the handles from the edge of the object and start rotating while holding down the Shift key.
+    This way you can rotate exactly 45, 90, 135 degrees.
+</p>
+<img src="~/Images/pencil4.jpg" />
+<h2>Step 5</h2>
+<p>
+    As you can see on the image above, the bounding box is rotated too. In this case you are not able to modify the object’s width or height.
+    You can still change the width or height by editing the values on top of the screen but if  you want to edit with the mouse, you need to Reset the Bounding Box. Go to Object -> Transform -> Reset Bounding Box.
+</p>
+<img src="~/Images/pencil5.jpg" />
+<h2>Step 6</h2>
+<p>
+    Set the object’s width to 50px and its height to 80px.
+    Place it over the red object.
+    Align them vertically.
+</p>
+<img src="~/Images/pencil6.jpg" />
+<h2>Step 7</h2>
+<p>
+    Create a Circle with the Ellipse Tool (E), align it with the other two objects and place it onto the bottom of the second object.
+    This will be the tip of the pencil.
+    Select the grey object (NOT the cirlce!), duplicate it (Ctrl + C, Ctrl + F).
+    Select the duplicated object and the circle, then select Intersect from the Windows -> Pathfinder Panel.
+</p>
+<img src="~/Images/pencil7.jpg" />
+<h2>Step 8</h2>
+<p>As a result, you should see this:</p>
+<img src="~/Images/pencil8.jpg" />
+<h2>Step 9</h2>
+<p>
+    Draw three circles with the Ellipse Tool.
+    Place them over the red object (You can increase the middle circle).
+    Select each circle, then press Unite from the Pathfinder Panel.
+    Fill it with a distinctive color (yellow).
+</p>
+<img src="~/Images/pencil9.jpg" />
+<h2>Step 10</h2>
+<p>
+    Duplicate the red object (Ctrl + C, Ctrl + F).
+    Select the duplicated object and the yellow one, and press Minus Front on the Pathfinder Panel.
+</p>
+<img src="~/Images/pencil10.jpg" />
+<h2>Step 11</h2>
+<p>
+    Remember Step 3 when I said that we can set the size of the grey object?
+    If you already have, then you can skip this step.
+    If not, duplicate the red object, select the duplicated object and the grey one and select Intersect on the Pathfinder Panel.
+</p>
+<img src="~/Images/pencil11.jpg" />
+<h2>Step 12</h2>
+<p>
+    Create a rectangle over the upper part of the “Pencil“.
+    I believe you are familiar with the steps by now: duplicate the red object, select the duplicated object and the newly created rectangle, and press Intersect on the Pathfinder Panel.
+    To place the new object behind the grey shape, go to Object -> Arrange  -> Send Backward.
+</p>
+<img src="~/Images/pencil12.jpg" />
+<h2>Step 13</h2>
+<p>
+    Create two Rectangles, arrange their sizes to fit the red object as you see on the image below.
+    Now it’s time to fill every object with its final color.
+</p>
+<img src="~/Images/pencil13.jpg" />
+<h2>Step 14</h2>
+<p>
+    After you filled each object with nice colors, finish the Pencil.
+    Duplicate the pencil’s body, select the duplicated object, and the left Rectangle, then select Intersect from the Pathfinder Panel.
+    Repeat this step with the last rectangle too.
+    When you’re done doing this, bring the grey shape on top of the other objects (Select it, go to Object -> Arrange -> Bring to Front).
+</p>
+<img src="~/Images/pencil14.jpg" />
+<h2>Step 15</h2>
+<p>
+    Repeat steps 13 and 14 with the grey object and use the color codes attached.
+    You’re done with the flat style Pencil.
+</p>
+<img src="~/Images/pencil15.jpg" />
+<h2>Step 16</h2>
+<p>
+    Create a Rectangle and place it over the pencil until it covers half of it.
+    Set its width to 500px and its height the same as the height of the Pencil.
+    This will be the shadow of the Pencil.
+</p>
+<img src="~/Images/pencil16.jpg" />
+<h2>Step 17</h2>
+<p>
+    Bring the shadow behind the Pencil (you can use the Arrange option as you did before, or cut and place behind the Pencil.
+    Ctrl + X, select the green Rounded Rectangle from the background and Ctrl + F).
+    Select the Pencil and its shadow, go to Object -> Transform ->Rotate and set the angle to 45º.
+</p>
+<img src="~/Images/pencil17.jpg" />
+<h2>Step 18</h2>
+<p>
+    There is only one more thing you need to do. Duplicate the green Rounded Rectangle.
+    Select the duplicated shape and the shadow of the Pencil, then press Intersect on the Pathfinder Panel.
+    This is the final image.
+    Feel free to experiment with other colors to get a trendy, flat icon for your web or mobile apps.
+</p>
+<img src="~/Images/pencil18.jpg" />
+

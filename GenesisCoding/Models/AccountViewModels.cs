@@ -64,6 +64,8 @@ namespace GenesisCoding.Models
 
     public class RegisterViewModel
     {
+        internal string UserName;
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

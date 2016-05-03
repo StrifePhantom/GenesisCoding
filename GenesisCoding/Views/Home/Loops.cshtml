@@ -1,0 +1,160 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Loops</h2>
+<p>
+    There may be a situation, when you need to execute a block of code several number of times.<br />
+    In general, the statements are executed sequentially: The first statement in a function is executed first, <br />
+    followed by the second, and so on.
+</p>
+
+<p>Programming languages provide various control structures that allow for more complicated execution paths.</p>
+
+<p>C# provides following types of loop to handle looping requirements. Click the following links to check their detail.</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Loop Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>While Loop</td>
+            <td>
+                It repeats a statement or a group of statements while a given condition is true.
+                It tests the condition before executing the loop body.
+            </td>
+        </tr>
+        <tr>
+            <td>For Loop</td>
+            <td>It executes a sequence of statements multiple times and abbreviates the code that manages the loop variable.</td>
+        </tr>
+        <tr>
+            <td>Do...While Loop</td>
+            <td>It is similar to a while statement, except that it tests the condition at the end of the loop body.</td>
+        </tr>
+        <tr>
+            <td>Nested Loops</td>
+            <td>You can use one or more loop inside any another while, for or do..while loop.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>While Loop</h2>
+
+<p>A while loop statement in C# repeatedly executes a target statement as long as a given condition is true.</p>
+
+<p>The syntax of a while loop in C# is:</p>
+
+<p>
+    while(condition)<br />
+    {<br />
+    statement(s);<br />
+    }<br />
+</p>
+
+<h2>For Loop</h2>
+
+<p>A for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.</p>
+
+<p>The syntax of a for loop in C# is:</p>
+
+<p>
+    for ( init; condition; increment )<br />
+    {<br />
+    statement(s);<br />
+    }<br />
+</p>
+
+
+<h2>Do...While Loop</h2>
+
+<p>
+    Unlike for and while loops, which test the loop condition at the start of the loop, the do...while loop checks <br />
+    its condition at the end of the loop.
+</p>
+
+<p>
+    A do...while loop is similar to a while loop, except that a do...while loop is guaranteed to execute at least one time.
+</p>
+
+<p>The syntax of a do...while loop in C# is:</p>
+
+<p>
+    do<br />
+    {<br />
+    statement(s);<br />
+    <br />
+    }while( condition );<br />
+</p>
+
+<h2>Nested Loops</h2>
+
+<p>C# allows to use one loop inside another loop. Following section shows few examples to illustrate the concept.</p>
+
+<p>The syntax for a nested for loop statement in C# is as follows:</p>
+
+<p>
+    for ( init; condition; increment )<br />
+    {<br />
+    for ( init; condition; increment )<br />
+    {<br />
+    statement(s);<br />
+    }<br />
+    statement(s);<br />
+    }<br />
+</p>
+
+<h2>Loop Control Statements</h2>
+<p>
+    Loop control statements change execution from its normal sequence. When execution leaves a scope, <br />
+    all automatic objects that were created in that scope are destroyed.
+</p>
+<p>C# provides the following control statements. Click the following links to check their details.</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Control Statement</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Break Statement</td>
+            <td>
+                Terminates the loop or switch statement and transfers execution to the statement immediately following the loop or switch.
+            </td>
+        </tr>
+        <tr>
+            <td>Continue Statement</td>
+            <td>Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Break Statement</h2>
+<p>
+    If you are using nested loops (i.e., one loop inside another loop), the break statement will stop the execution<br />
+    of the innermost loop and start executing the next line of code after the block.
+</p>
+<p>The syntax for a break statement in C# is as follows:</p>
+<p>break;</p>
+
+<h2>Continue Statement</h2>
+<p>
+    The continue statement in C# works somewhat like the break statement. Instead of forcing termination, however,<br />
+    continue forces the next iteration of the loop to take place, skipping any code in between.
+</p>
+<p>
+    For the for loop, continue statement causes the conditional test and increment portions of the loop to execute. <br />
+    For the while and do...while loops, continue statement causes the program control passes to the conditional tests.
+</p>
+
+<p>The syntax for a continue statement in C# is as follows:</p>
+<p>continue;</p>
+
+<p><a href="/Home/DescisionMaking">Previous Page&nbsp;&nbsp;&nbsp;</a><a href="/Home/Loops">Next Page</a></p>

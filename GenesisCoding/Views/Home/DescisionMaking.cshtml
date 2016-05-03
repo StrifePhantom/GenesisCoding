@@ -1,0 +1,131 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Decision Making</h2>
+
+<p>
+    Decision making structures requires the programmer to specify one or more conditions to be evaluated <br />
+    or tested by the program, along with a statement or statements to be executed if the condition is determined <br />
+    to be true, and optionally, other statements to be executed if the condition is determined to be false.
+</p>
+
+<p>C# provides following types of decision making statements. Click the following links to check their detail.</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Statement</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>if Statement</td>
+            <td>An if statement consists of a boolean expression followed by one or more statements.</td>
+        </tr>
+        <tr>
+            <td>if...else Statement</td>
+            <td>An if statement can be followed by an optional else statement, which executes when the boolean expression is false.</td>
+        </tr>
+        <tr>
+            <td>Nested if Statements</td>
+            <td>You can use one if or else if statement inside another if or else if statement(s).</td>
+        </tr>
+        <tr>
+            <td>Switch Statement</td>
+            <td>A switch statement allows a variable to be tested for equality against a list of values.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>if Statement</h2>
+<p>An if statement consists of a boolean expression followed by one or more statements.</p>
+<p>
+    If the boolean expression evaluates to true, then the block of code inside the if statement is executed. <br />
+    If boolean expression evaluates to false, then the first set of code after the end of the if statement(after the closing curly brace) is executed.
+</p>
+
+<p>
+    /* local variable definition */ <br />
+    int a = 10;<br />
+    /* check the boolean condition using if statement */<br />
+    if (a < 20)<br />
+    {<br />
+    /* if condition is true then print the following */<br />
+    Console.WriteLine("a is less than 20");<br />
+    }<br />
+</p>
+
+<h2>if...else Statement</h2>
+
+<p>An if statement can be followed by an optional else statement, which executes when the boolean expression is false.</p>
+<p>If the boolean expression evaluates to true, then the if block of code is executed, otherwise else block of code is executed.</p>
+<p>
+    /* local variable definition */<br />
+    int a = 100;<br />
+    <br />
+    /* check the boolean condition */<br />
+    if (a < 20)<br />
+    {<br />
+    /* if condition is true then print the following */<br />
+    Console.WriteLine("a is less than 20");<br />
+    }<br />
+    else<br />
+    {<br />
+    /* if condition is false then print the following */<br />
+    Console.WriteLine("a is not less than 20");<br />
+    }<br />
+    Console.WriteLine("value of a is : {0}", a);<br />
+    Console.ReadLine();<br />
+</p>
+
+<h2>Nested if Statements</h2>
+
+<p>
+    It is always legal in C# to nest if-else statements, which means you can use one if or else if <br />
+    statement inside another if or else if statement(s).
+</p>
+
+<p>
+    //* local variable definition */<br />
+    int a = 100;<br />
+    int b = 200;<br />
+    <br />
+    /* check the boolean condition */<br />
+    if (a == 100)<br />
+    {<br />
+    /* if condition is true then check the following */<br />
+    if (b == 200)<br />
+    {<br />
+    /* if condition is true then print the following */<br />
+    Console.WriteLine("Value of a is 100 and b is 200");<br />
+    }<br />
+    }<br />
+    Console.WriteLine("Exact value of a is : {0}", a);<br />
+    Console.WriteLine("Exact value of b is : {0}", b);<br />
+    Console.ReadLine();<br />
+</p>
+
+<h2>Switch Statement</h2>
+<p>
+    A switch statement allows a variable to be tested for equality against a list of values.<br />
+    Each value is called a case, and the variable being switched on is checked for each switch case.
+</p>
+
+<p>
+    switch(expression) {<br />
+    case constant-expression  :<br />
+    statement(s);<br />
+    break; /* optional */<br />
+    case constant-expression  :<br />
+    statement(s);<br />
+    break; /* optional */<br />
+    <br />
+    /* you can have any number of case statements */<br />
+    default : /* Optional */<br />
+    statement(s);<br />
+    }<br />
+</p>
+
+<p><a href="/Home/Operators">Previous Page&nbsp;&nbsp;&nbsp;</a><a href="/Home/Loops">Next Page</a></p>

@@ -10,7 +10,12 @@ namespace GenesisCoding.Models
     public class ApplicationUser : IdentityUser
     {
         public string FirstName { get; internal set; }
+        public string UserName { get; internal set; }
+        public string Email { get; set; }
         public string LastName { get; internal set; }
+        public string ConfirmationToken { get; set; }
+        public bool IsConfirmed { get; set; }
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

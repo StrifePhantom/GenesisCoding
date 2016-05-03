@@ -77,9 +77,37 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Postal, Version=0.9.2.0, Culture=neutral, PublicKeyToken=45719375b8b4d528, processorArchitecture=MSIL">
+      <HintPath>..\packages\Postal.0.9.2\lib\net40\Postal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.2\lib\net46\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.6.3.4\lib\SendGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi, Version=1.3.1.0, Culture=neutral, PublicKeyToken=2ae73662c35d80e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.3.1\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SendGridMail, Version=6.3.4.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.6.3.4\lib\SendGridMail.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,6 +158,10 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Twilio.Api, Version=3.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.4.7.1\lib\3.5\Twilio.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -140,9 +172,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -222,6 +251,41 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\GenesisCodingLogo.png" />
+    <Content Include="images\pencil1.jpg" />
+    <Content Include="images\pencil10.jpg" />
+    <Content Include="images\pencil11.jpg" />
+    <Content Include="images\pencil12.jpg" />
+    <Content Include="images\pencil13.jpg" />
+    <Content Include="images\pencil14.jpg" />
+    <Content Include="images\pencil15.jpg" />
+    <Content Include="images\pencil16.jpg" />
+    <Content Include="images\pencil17.jpg" />
+    <Content Include="images\pencil18.jpg" />
+    <Content Include="images\pencil2.jpg" />
+    <Content Include="images\pencil3.jpg" />
+    <Content Include="images\pencil4.jpg" />
+    <Content Include="images\pencil5.jpg" />
+    <Content Include="images\pencil6.jpg" />
+    <Content Include="images\pencil7.jpg" />
+    <Content Include="images\pencil8.jpg" />
+    <Content Include="images\pencil9.jpg" />
+    <Content Include="images\step01.jpg" />
+    <Content Include="images\step02.jpg" />
+    <Content Include="images\step03.jpg" />
+    <Content Include="images\step04.jpg" />
+    <Content Include="images\step05.jpg" />
+    <Content Include="images\step06.jpg" />
+    <Content Include="images\step07.jpg" />
+    <Content Include="images\step08.jpg" />
+    <Content Include="images\step09.jpg" />
+    <Content Include="images\step10.jpg" />
+    <Content Include="images\step11.jpg" />
+    <Content Include="images\step12.jpg" />
+    <Content Include="images\step13.jpg" />
+    <Content Include="images\step14.jpg" />
+    <Content Include="images\step15.jpg" />
+    <Content Include="images\step16.jpg" />
+    <Content Include="images\step17.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -241,7 +305,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -275,6 +341,17 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Emails\_ViewStart.cshtml" />
+    <Content Include="Views\Emails\Web.config" />
+    <Content Include="Views\Home\HomePage.cshtml" />
+    <Content Include="Views\Home\OverView.cshtml" />
+    <Content Include="Views\Home\Variables.cshtml" />
+    <Content Include="Views\Home\Operators.cshtml" />
+    <Content Include="Views\Home\DescisionMaking.cshtml" />
+    <Content Include="Views\Home\Loops.cshtml" />
+    <Content Include="Views\Home\Baseball.cshtml" />
+    <Content Include="Views\Home\Pencil.cshtml" />
+    <Content Include="Views\Home\Method.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -64,7 +64,6 @@ namespace GenesisCoding.Models
 
     public class RegisterViewModel
     {
-        internal string UserName;
 
         [Required]
         [EmailAddress]
@@ -73,12 +72,12 @@ namespace GenesisCoding.Models
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "First Name")]
+        [Display(Name = "FirstName")]
         public string FirstName { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
-        [Display(Name = "Last Name")]
+        [Display(Name = "LastName")]
         public string LastName { get; set; }
 
         [Required]

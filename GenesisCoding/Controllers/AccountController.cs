@@ -26,7 +26,7 @@ namespace GenesisCoding.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -38,9 +38,9 @@ namespace GenesisCoding.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -124,7 +124,7 @@ namespace GenesisCoding.Controllers
             // If a user enters incorrect codes for a specified amount of time then the user account 
             // will be locked out for a specified amount of time. 
             // You can configure the account lockout settings in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -136,16 +136,6 @@ namespace GenesisCoding.Controllers
                     ModelState.AddModelError("", "Invalid code.");
                     return View(model);
             }
-        }
-
-
-        private void SendEmailConfirmation(string to, string username, string confirmationToken)
-        {
-            dynamic email = new Email("RegEmail");
-            email.To = to;
-            email.UserName = username;
-            email.ConfirmationToken = confirmationToken;
-            email.Send();
         }
 
         //
@@ -165,76 +155,38 @@ namespace GenesisCoding.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName};
-                user.Email = model.Email;
-                user.IsConfirmed = false;
-
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
-
                 if (result.Succeeded)
                 {
-                    System.Net.Mail.MailMessage m = new System.Net.Mail.MailMessage(
-                    new System.Net.Mail.MailAddress("sender@mydomain.com", "Web Registration"),
-                    new System.Net.Mail.MailAddress(user.Email));
-                    m.Subject = "Email confirmation";
-                    m.Body = string.Format("Dear {0}" + 
-                    "<br/> Thank you for your registration, please click on the" +
-                    "below link to complete your registration: < a href =\"{1}\"  " +
-                    "title =\"User Email Confirm\">{1}</a>",
-                    user.UserName, Url.Action("ConfirmEmail", "Account",
-                       new { Token = user.Id, Email = user.Email }, Request.Url.Scheme)) ;
-                    m.IsBodyHtml = true;
-                    System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.mydomain.com");
-                    smtp.Credentials = new System.Net.NetworkCredential("sender@mydomain.com", "password");
-                    smtp.EnableSsl = true;
-                    smtp.Send(m);
-                    return RedirectToAction("Confirm", "Account", new { Email = user.Email });
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+                    // Send an email with this link
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                    return RedirectToAction("Index", "Home");
                 }
-                else
-                {
-                    AddErrors(result);
-                }
+                AddErrors(result);
             }
+
             // If we got this far, something failed, redisplay form
             return View(model);
         }
 
         //
-        //// GET: /Account/ConfirmEmail
-        //[AllowAnonymous]
-        //public async Task<ActionResult> ConfirmEmail(string userId, string code)
-        //{
-        //    if (userId == null || code == null)
-        //    {
-        //        return View("Error");
-        //    }
-        //    var result = await UserManager.ConfirmEmailAsync(userId, code);
-        //    return View(result.Succeeded ? "ConfirmEmail" : "Error");
-        //}
-
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]
-        public async Task<ActionResult> ConfirmEmail(string Token, string Email)
+        public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
-            ApplicationUser user = this.UserManager.FindById(Token);
-            if (user != null)
+            if (userId == null || code == null)
             {
-                if (user.Email == Email)
-                {
-                    user.IsConfirmed = true;
-                    await UserManager.UpdateAsync(user);
-                    //await SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home", new { ConfirmedEmail = user.Email });
-                }
-                else
-                {
-                    return RedirectToAction("Confirm", "Account", new { Email = user.Email });
-                }
+                return View("Error");
             }
-            else
-            {
-                return RedirectToAction("Confirm", "Account", new { Email = "" });
-            }
+            var result = await UserManager.ConfirmEmailAsync(userId, code);
+            return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
         //

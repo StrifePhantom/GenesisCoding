@@ -18,10 +18,114 @@
 <p>When you define a method, you basically declare the elements of its structure. The syntax for defining a method in C# is as follows:</p>
 
 <p>
-    <Access Specifier>
-        <Return Type>           <Method Name>
-                (Parameter List)
-                {
-                Method Body
-                }
+    Access Specifier Return Type  Method Name(Parameter List)<br />
+    {<br />
+    Method Body<br />
+    }<br />
 </p>
+
+<p>Following are the various elements of a method:</p>
+
+<p><b>Access Specifier</b> This determines the visibility of a variable or a method from another class.Access Specifier: This determines the visibility of a variable or a method from another class.</p>
+<p>
+    <b>Return type</b>: A method may return a value. The return type is the data type of the value the method returns.
+    If the method is not returning any values, then the return type is void.
+</p>
+<p><b>Method name</b>: Method name is a unique identifier and it is case sensitive. It cannot be same as any other identifier declared in the class.</p>
+<p><b>Parameter list</b>: Enclosed between parentheses, the parameters are used to pass and receive data from a method. The parameter list refers to the type, order, and number of the parameters of a method. Parameters are optional; that is, a method may contain no parameters.</p>
+<p><b>Method body</b>: This contains the set of instructions needed to complete the required activity.</p>
+
+<h2>Example</h2>
+
+<p>
+    Following code snippet shows a function FindMax that takes two integer values and returns the larger of the two. <br />
+    It has public access specifier, so it can be accessed from outside the class using an instance of the class.
+</p>
+
+<p>
+    class NumberManipulator<br/>
+    {<br />
+    public int FindMax(int num1, int num2)<br />
+    {<br />
+    /* local variable declaration */<br />
+    int result;<br />
+    <br />
+    if (num1 > num2)<br />
+    result = num1;<br />
+    else<br />
+    result = num2;<br />
+    <br />
+    return result;<br />
+    }<br />
+    ...<br />
+    }<br />
+</p>
+
+<h2>Calling Methods in C#</h2>
+
+<p>You can call a method using the name of the method. The following example illustrates this:</p>
+
+<p>
+    using System;<br/>
+    namespace CalculatorApplication<br />
+    {<br />
+    class NumberManipulator<br />
+    {<br />
+    public int FindMax(int num1, int num2)<br />
+    {<br />
+    /* local variable declaration */<br />
+    int result;<br />
+
+    if (num1 > num2)<br />
+    result = num1;<br />
+    else<br />
+    result = num2;<br />
+    return result;<br />
+    }<br />
+    static void Main(string[] args)<br />
+    {<br />
+    /* local variable definition */<br />
+    int a = 100;<br />
+    int b = 200;<br />
+    int ret;<br />
+    NumberManipulator n = new NumberManipulator();<br />
+    <br />
+    //calling the FindMax method<br />
+    ret = n.FindMax(a, b);<br />
+    Console.WriteLine("Max value is : {0}", ret );<br />
+    Console.ReadLine();<br />
+    }<br />
+    }<br />
+    }<br />
+</p>
+
+<h2>Passing Parameters to a Method</h2>
+
+<p>When method with parameters is called, you need to pass the parameters to the method. There are three ways that parameters can be passed to a method:</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mechanism</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Value Parameter</td>
+            <td>This method copies the actual value of an argument into the formal parameter of the function. In this case, changes made to the parameter inside the function have no effect on the argument.</td>
+        </tr>
+        <tr>
+            <td>Reference Parameter</td>
+            <td>This method copies the reference to the memory location of an argument into the formal parameter. This means that changes made to the parameter affect the argument.</td>
+        </tr>
+        <tr>
+            <td>Output Parameter</td>
+            <td>This method helps in returning more than one value.</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><a href="/Home/Loops">Previous Page&nbsp;&nbsp;&nbsp;</a><a href="/Home/Arrys">Next Page</a></p>
+
+<div class="fb-comments" data-href="https://genesiscoding.com" data-numposts="5"></div>

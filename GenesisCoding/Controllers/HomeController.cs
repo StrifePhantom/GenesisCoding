@@ -6,7 +6,8 @@ using System.Web.Mvc;
 
 namespace GenesisCoding.Controllers
 {
-    public class HomeController : ApplicationBaseController
+    [RequireHttps]
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {
@@ -77,6 +78,20 @@ namespace GenesisCoding.Controllers
         }
 
         public ActionResult Pencil()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Method()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Arrays()
         {
             ViewBag.Message = "Your contact page.";
 

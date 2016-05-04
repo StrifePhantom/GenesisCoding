@@ -1,0 +1,72 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Arrays</h2>
+<p>
+    An array stores a fixed-size sequential collection of elements of the same type. An array is used to store a collection of data, <br />
+    but it is often more useful to think of an array as a collection of variables of the same type stored at contiguous memory locations.
+</p>
+
+<p>
+    Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as numbers and <br />
+    use numbers[0], numbers[1], and ..., numbers[99] to represent individual variables. A specific element in an array is accessed by an index.
+</p>
+
+<h2>Declaring Arrays</h2>
+
+<p>To declare an array in C#, you can use the following syntax:</p>
+
+<p>datatype[] arrayName;</p>
+
+<p>For example: double[] balance;</p>
+
+<p>Initializing an Array</p>
+
+<p>Declaring an array does not initialize the array in the memory. When the array variable is initialized, you can assign values to the array.</p>
+
+<p>Array is a reference type, so you need to use the <b>new</b> keyword to create an instance of the array. For example,</p>
+
+<p>double[] balance = new double[10];</p>
+
+<h2>Assigning Values to an Array</h2>
+
+<p>You can assign values to individual array elements, by using the index number, like:</p>
+
+<p>
+    double[] balance = new double[10]; <br />
+    balance[0] = 4500.0;
+</p>
+
+<p>You can assign values to the array at the time of declaration, as shown:</p>
+
+<p>double[] balance = { 2340.0, 4523.69, 3421.0};</p>
+
+<p>You can also create and initialize an array, as shown:</p>
+
+<p>int [] marks = new int[5]  { 99,  98, 92, 97, 95};</p>
+
+<p>You can copy an array variable into another target array variable. In such case, both the target and source point to the same memory location:</p>
+
+<p>
+    int [] marks = new int[]  { 99,  98, 92, 97, 95}; <br />
+    int[] score = marks;
+</p>
+
+<p>
+    When you create an array, C# compiler implicitly initializes each array element to a default value depending on the array type. <br />
+    For example, for an int array all elements are initialized to 0.
+</p>
+
+<h2>Accessing Array Elements</h2>
+
+<p>
+    An element is accessed by indexing the array name. This is done by placing the index of the element within square brackets <br />
+    after the name of the array. For example,
+</p>
+
+<p>double salary = balance[9];</p>
+
+<p><a href="/Home/Method">Previous Page&nbsp;&nbsp;&nbsp;</a><a href="/Home/Arrays">Next Page</a></p>
+
+<div class="fb-comments" data-href="https://genesiscoding.com" data-numposts="5"></div>

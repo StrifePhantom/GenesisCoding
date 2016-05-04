@@ -54,9 +54,9 @@ namespace GenesisCoding
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1596002847382393",
+               appSecret: "4afa3766f5b3898edb565f90ff83e609");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

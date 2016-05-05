@@ -10,6 +10,7 @@ using GenesisCoding.Models;
 
 namespace GenesisCoding.Controllers
 {
+
     [Authorize]
     public class ManageController : Controller
     {

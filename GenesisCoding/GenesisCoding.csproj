@@ -301,6 +301,7 @@
     <Content Include="images\step17.jpg" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -376,6 +377,8 @@
     <Content Include="Views\Home\Pencil.cshtml" />
     <Content Include="Views\Home\Method.cshtml" />
     <Content Include="Views\Home\Arrays.cshtml" />
+    <Content Include="Views\Home\Classes.cshtml" />
+    <Content Include="Views\Shared\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

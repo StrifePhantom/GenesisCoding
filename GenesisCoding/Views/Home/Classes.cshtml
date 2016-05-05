@@ -1,0 +1,195 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Classes</h2>
+
+<p>
+    When you define a class, you define a blueprint for a data type. This does not actually define any data,<br />
+    but it does define what the class name means. That is, what an object of the class consists of and what operations can be performed on that object.<br />
+    Objects are instances of a class. The methods and variables that constitute a class are called members of the class.
+</p>
+
+<h2>Defining a Class</h2>
+
+<p>
+    A class definition starts with the keyword class followed by the class name; and the class body enclosed by a pair of curly braces. <br />
+    Following is the general form of a class definition:
+</p>
+
+<p>
+    access specifier class  class_name <br />
+    {<br />
+    // member variables<br />
+    access specifier data type variable1;<br />
+    access specifier data type variable2;<br />
+    ...<br />
+    access specifier data type variableN;<br />
+    // member methods<br />
+    access specifier return type method1(parameter_list)<br />
+    {<br />
+    // method body<br />
+    }<br />
+    access specifier return type method2(parameter_list)<br />
+    {<br />
+    // method body<br />
+    }<br />
+    ...<br />
+    access specifier return type methodN(parameter_list)<br />
+    {<br />
+    // method body<br />
+    }<br />
+    }<br />
+</p>
+
+<p>The following example illustrates the concepts discussed so far:</p>
+
+<p>
+    using System;<br />
+    namespace BoxApplication<br />
+    {<br />
+    class Box<br />
+    {<br />
+    public double length;   // Length of a box<br />
+    public double breadth;  // Breadth of a box<br />
+    public double height;   // Height of a box<br />
+    }<br />
+    class Boxtester<br />
+    {<br />
+    static void Main(string[] args)<br />
+    {<br />
+    Box Box1 = new Box();   // Declare Box1 of type Box<br />
+    Box Box2 = new Box();   // Declare Box2 of type Box<br />
+    double volume = 0.0;    // Store the volume of a box here<br />
+    <br />
+    // box 1 specification<br />
+    Box1.height = 5.0;<br />
+    Box1.length = 6.0;<br />
+    Box1.breadth = 7.0;<br />
+    <br />
+    // box 2 specification<br />
+    Box2.height = 10.0;<br />
+    Box2.length = 12.0;<br />
+    Box2.breadth = 13.0;<br />
+    <br />
+    // volume of box 1<br />
+    volume = Box1.height * Box1.length * Box1.breadth;<br />
+    Console.WriteLine("Volume of Box1 : {0}",  volume);<br />
+    <br />
+    // volume of box 2<br />
+    volume = Box2.height * Box2.length * Box2.breadth;<br />
+    Console.WriteLine("Volume of Box2 : {0}", volume);<br />
+    Console.ReadKey();<br />
+    }<br />
+    }<br />
+    }<br />
+</p>
+
+<p>When the above code is compiled and executed, it produces the following result:</p>
+
+<p>
+    Volume of Box1 : 210 <br />
+    Volume of Box2 : 1560
+</p>
+
+<h2>C# Constructors</h2>
+
+<p>A class <b>constructor</b> is a special member function of a class that is executed whenever we create new objects of that class.</p>
+
+<p>A constructor has exactly the same name as that of class and it does not have any return type. Following example explains the concept of constructor:</p>
+
+<p>
+    using System;<br />
+    namespace LineApplication<br />
+    {<br />
+    class Line<br />
+    {<br />
+    private double length;   // Length of a line<br />
+    public Line()<br />
+    {<br />
+    Console.WriteLine("Object is being created");<br />
+    }<br />
+    <br />
+    public void setLength( double len )<br />
+    {<br />
+    length = len;<br />
+    }<br />
+    <br />
+    public double getLength()<br />
+    {<br />
+    return length;<br />
+    }<br />
+    <br />
+    static void Main(string[] args)<br />
+    {<br />
+    Line line = new Line();<br />
+    <br />
+    // set line length<br />
+    line.setLength(6.0);<br />
+    Console.WriteLine("Length of line : {0}", line.getLength());<br />
+    Console.ReadKey();<br />
+    }<br />
+    }<br />
+    }<br />
+</p>
+
+<p>When the above code is compiled and executed, it produces the following result:</p>
+
+<p>
+    Object is being created <br />
+    Length of line : 6
+</p>
+
+<p>
+    A default constructor does not have any parameter but if you need, a constructor can have parameters. <br />
+    Such constructors are called parameterized constructors. This technique helps you to assign initial value to an object at the <br />
+    time of its creation as shown in the following example:
+</p>
+
+<p>
+    using System;<br />
+    namespace LineApplication<br />
+    {<br />
+    class Line<br />
+    {<br />
+    private double length;   // Length of a line<br />
+    public Line(double len)  //Parameterized constructor<br />
+    {<br />
+    Console.WriteLine("Object is being created, length = {0}", len);<br />
+    length = len;<br />
+    }<br />
+    <br />
+    public void setLength( double len <br />
+    {<br />
+    length = len;<br />
+    }<br />
+    public double getLength()<br />
+    {<br />
+    return length;<br />
+    }<br />
+    <br />
+    static void Main(string[] args)<br />
+    {<br />
+    Line line = new Line(10.0);<br />
+    Console.WriteLine("Length of line : {0}", line.getLength());<br />
+    <br />
+    // set line length<br />
+    line.setLength(6.0);<br />
+    Console.WriteLine("Length of line : {0}", line.getLength());<br />
+    Console.ReadKey();<br />
+    }<br />
+    }<br />
+    }<br />
+</p>
+
+<p>When the above code is compiled and executed, it produces the following result:</p>
+
+<p>
+    Object is being created, length = 10 <br />
+    Length of line : 10 <br />
+    Length of line : 6
+</p>
+
+<p><a href="/Home/Arrays">Previous Page&nbsp;&nbsp;&nbsp;</a></p>
+
+<div class="fb-comments" data-href="https://genesiscoding.com" data-numposts="5"></div>

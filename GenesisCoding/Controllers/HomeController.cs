@@ -21,6 +21,7 @@ namespace GenesisCoding.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -92,6 +93,13 @@ namespace GenesisCoding.Controllers
         }
 
         public ActionResult Arrays()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult Classes()
         {
             ViewBag.Message = "Your contact page.";
 
